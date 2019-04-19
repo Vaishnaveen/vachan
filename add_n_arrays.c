@@ -37,4 +37,4 @@ int main()
       compute(&n,a,&sum);
       output(sum);
       return 0;
-
+}
