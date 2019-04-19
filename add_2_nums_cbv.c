@@ -1,17 +1,19 @@
 #include<stdio.h>
-int getinput(int);
+int getinput();
 int add(int,int);
 void  output(int);
-void main()
+int main()
 {
   int a,b,sum;
-  a=getinput(a);
-  b=getinput(b);
+  a=getinput();
+  b=getinput();
   sum=add(a,b);
   output(sum);
+  return 0;
 }
-int getinput(int x)
+int getinput()
 {
+  int x;
   printf("read value\n");
   scanf("%d",&x);
   return x;
@@ -23,7 +25,7 @@ int add(int x, int y)
 void output(int p)
 {
   printf("the sum is %d",p);
-  return;
+  return ;
 }
 
 
