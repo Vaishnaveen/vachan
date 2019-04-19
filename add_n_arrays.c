@@ -4,7 +4,7 @@ void inputn(int *n)
      scanf("%d",n);
      return;
 }
-void inputnumbers(int *n, int a)
+void inputnumbers(int *n, int a[])
 {
       int p=*n;
       for(int i=0;i<p;i++)
@@ -13,7 +13,7 @@ void inputnumbers(int *n, int a)
       }
       return;
 }
-void compute(int *n, int a,int *sum)
+void compute(int *n, int a[],int *sum)
 {
       int p=*n;
       for(int i=0;i<p;i++)
@@ -38,3 +38,4 @@ int main()
       output(sum);
       return 0;
 }
+
