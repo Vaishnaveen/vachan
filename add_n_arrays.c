@@ -9,7 +9,7 @@ void inputnumbers(int *n, int a[])
       int p=*n;
       for(int i=0;i<p;i++)
       {
-          scanf("%d",a[i]);
+          scanf("%d",&a[i]);
       }
       return;
 }
