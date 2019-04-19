@@ -31,8 +31,8 @@ int main()
       printf("read n\n");
       inputn(&n);
       printf("read the numbers\n");
-      inputnumbers(n,&a[0]);
-      compute(n,&a[0],&sum);
+      inputnumbers(n,a[0]);
+      compute(n,a[0],&sum);
       output(sum);
       return 0;
 }
