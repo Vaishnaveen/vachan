@@ -19,26 +19,21 @@ void output(int n3,int d3)
 }
 void add(int n1, int n2, int d1, int d2, int *n3, int *d3)
 {
-    int c,t;
-    *d3=d1*d2;
-    *n3=(n1*d2)+(n2*d1);
-    t=(*n3<*d3)?*n3:*d3;
-    for(int j=1;j<=t;j++)
+   *d3=d1*d2;
+   *n3=(n1*d2)+(n2*d1);
+   return;
+}
+void reduce(int *n3, int *d3)
+{   int gcd;
+    for(int i=1;((i<=*n3)&&(i<=*d3));i++)
     {
-            if((*n3%j==0)&&(*d3%j==0))
-            {
-               c=(*n3<*d3)?*n3:*d3;
-               for(int i=1;i<=c;i++)
-               {
-                   if((*n3%i==0)&&(*d3%i==0))
-                       {
-                                *n3=*n3/i;
-                                *d3=*d3/i;
-                       }
-               }
-            }
-            t=(*n3<*d3)?*n3:*d3;
+        if((*n3%i==0)&&(*d3%i==0))
+        {
+                gcd=i;
+        }
     }
+    *n3=*n3/gcd;
+    *d3=*d3/gcd;
     return;
 }
 int main()
@@ -53,8 +48,10 @@ int main()
     printf("read d2\n");
     input(&d2);
     add(n1,n2,d1,d2,&n3,&d3);
+    reduce(&n3,&d3);
     output(n3,d3);
 }
+
 
     
     
