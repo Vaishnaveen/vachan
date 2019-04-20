@@ -21,10 +21,10 @@ void output(int a,int b)
     }
     return;
 }
-void add(int n1, int n2, int d1, int d2, int *n3, int *d3)
+void add(int n1, int n2, int d1, int d2, int *a, int *b)
 {
-   *d3=d1*d2;
-   *n3=(n1*d2)+(n2*d1);
+   *a=d1*d2;
+   *b=(n1*d2)+(n2*d1);
    return;
 }
 int gcd(int a, int b)
@@ -42,7 +42,7 @@ int gcd(int a, int b)
 }
 int main()
 {
-    int n1,n2,n3,d1,d2,d3,x;
+    int n1,d1,n2,d2,n3,d3,x;
     printf("read n1\n");
     input(&n1);
     printf("read d1\n");
