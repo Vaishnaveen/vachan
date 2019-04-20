@@ -27,11 +27,11 @@ void add(int n1, int n2, int d1, int d2, int *n3, int *d3)
    *n3=(n1*d2)+(n2*d1);
    return;
 }
-int gcd(int *n3, int *d3)
+int gcd(int n3, int d3)
 {   int x;
-    for(int i=1;((i<=*n3)&&(i<=*d3));i++)
+    for(int i=1;((i<=n3)&&(i<=d3));i++)
     {
-        if((*n3%i==0)&&(*d3%i==0))
+        if((n3%i==0)&&(d3%i==0))
         {
                 x=i;
         }
@@ -52,7 +52,7 @@ int main()
     printf("read d2\n");
     input(&d2);
     add(n1,n2,d1,d2,&n3,&d3);
-    x=gcd(&n3,&d3);
+    x=gcd(n3,d3);
     n3/=x;
     d3/=x;
     output(n3,d3);
