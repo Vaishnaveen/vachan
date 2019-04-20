@@ -1,49 +1,41 @@
 #include<stdio.h>
-void inputn(int *n)
-{
-     scanf("%d",n);
-     return;
+int inputn()
+{   int n;
+    scanf("%d",&n);
+    return n;
 }
-void inputnumbers(int n, int a[n])
+void inputnumbers(int i, int n, int a[n])
+{
+    printf("enter the nos:\n");
+
+    for(int i=0;i<n;i++)
+    {
+        scanf("%d",&a[i]);
+    }
+   return;
+}
+void compute(int a[], int s)
+{
+    int n;
+    for(int i=0;i<n;i++)
+    {
+        s=s+a[i];
+    }
+    return;
+}
+void output(int s)
 {
 
-      for(int i=0;i<n;i++)
-      {
-          scanf("%d",&a[i]);
-      }
-      return;
-}
-void compute(int n, int a[n],int *sum)
-{
-      int s=0;
-      for(int i=0;i<n;i++)
-      {
-          s+=a[i];
-      }
-      *sum=s;
-      return;
-}
-void output(int n,int a[n],int sum)
-{
-      printf(" ");
-      for(int i=0;i<n-1;i++)
-      {
-         printf("%d + ",a[i]);
-      }
-      printf("%d = %d",a[n-1],sum);
+        printf("tne sum of n nos is:%d\n",s);
+    }
 
-      return;
-}
-int main()
+ int main()
 {
-      int n,a[50],sum;
-      printf("read n\n");
-      inputn(&n);
-      printf("read the numbers\n");
-      inputnumbers(n,a);
-      compute(n,a,&sum);
-      output(n,a,sum);
-      return 0;
-}
-
-
+    int s=0,n;
+    n=inputn();
+    printf("read n:%d\n",n);
+    int a[n],i=0;
+    inputnumbers(i,n,a);
+    compute(a,s);
+    output(s);
+ }
