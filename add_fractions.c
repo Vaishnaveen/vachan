@@ -1,37 +1,40 @@
 #include<stdio.h>
-void input(int *x)
+void input(struct fraction *x)
 {
-    scanf("%d",x);
+    printf("read numerator\n");
+    scanf("%d",x.n);
+    printf("read denominator\n");
+    scanf("%d",x.d);
     return;
 }
-void output(int a,int b)
+void output(struct fraction a)
 {
 
-    if(a==b)
+    if(a.n==a.d)
     {
             printf("the sum of the given fraction is = 1");
     }
-    else if(b==1)
+    else if(a.d==1)
     {
-            printf("the sum of the given fraction is = %d",a);
+            printf("the sum of the given fraction is = %d",a.n);
     }
     else
     {
-            printf("the sum the given fraction is = %d/%d",a,b);
+            printf("the sum the given fraction is = %d/%d",a.n,a.d);
     }
     return;
 }
-void add(int n1, int n2, int d1, int d2, int *a, int *b)
+void add(struct fraction a,struct fraction  b,struct fraction *c)
 {
-   *a=d1*d2;
-   *b=(n1*d2)+(n2*d1);
+   *c.d=(a.d)*(b.d);
+   *c.n=(a.n*b.d)+(b.n*a.d);
    return;
 }
-int gcd(int a, int b)
+int gcd(struct fraction a)
 {   int x;
-    for(int i=1;((i<=a)&&(i<=b));i++)
+    for(int i=1;((i<=a.n)&&(i<=a.d));i++)
     {
-        if((a%i==0)&&(b%i==0))
+        if((a.n%i==0)&&(a.d%i==0))
         {
                 x=i;
         }
@@ -40,23 +43,27 @@ int gcd(int a, int b)
 
     return x;
 }
+struct fraction
+{
+    int n;
+    int d;
+};
+
 int main()
 {
-    int n1,d1,n2,d2,n3,d3,x;
-    printf("read n1\n");
-    input(&n1);
-    printf("read d1\n");
-    input(&d1);
-    printf("read n2\n");
-    input(&n2);
-    printf("read d2\n");
-    input(&d2);
-    add(n1,n2,d1,d2,&n3,&d3);
-    x=gcd(n3,d3);
-    n3/=x;
-    d3/=x;
-    output(n3,d3);
+    fraction a,b,c;
+    int x;
+    printf("read 1st fraction\n");
+    input(&a);
+    printf("read 2nd farction\n");
+    input(&b);
+    add(a,b,&c);
+    x=gcd(c);
+    c.n/=x;
+    c.d/=x;
+    output(c);
 }
+
 
 
     
