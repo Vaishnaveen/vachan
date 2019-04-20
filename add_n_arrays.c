@@ -4,7 +4,7 @@ void inputn(int *n)
      scanf("%d",n);
      return;
 }
-void inputnumbers(int n, int a[])
+void inputnumbers(int n, int a[n])
 {
 
       for(int i=0;i<n;i++)
@@ -13,7 +13,7 @@ void inputnumbers(int n, int a[])
       }
       return;
 }
-void compute(int n, int a[],int *sum)
+void compute(int n, int a[n],int *sum)
 {
       int s=0;
       for(int i=0;i<n;i++)
@@ -23,7 +23,7 @@ void compute(int n, int a[],int *sum)
       *sum=s;
       return;
 }
-void output(int a[],int n,int sum)
+void output(int n,int a[n],int sum)
 {
       printf(" ");
       for(int i=0;i<n-1;i++)
@@ -42,7 +42,7 @@ int main()
       printf("read the numbers\n");
       inputnumbers(n,a);
       compute(n,a,&sum);
-      output(a,n,sum);
+      output(n,a,sum);
       return 0;
 }
 
