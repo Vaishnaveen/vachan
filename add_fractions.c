@@ -4,20 +4,20 @@ void input(int *x)
     scanf("%d",x);
     return;
 }
-void output(int n3,int d3)
+void output(int a,int b)
 {
 
-    if(n3==d3)
+    if(a==b)
     {
             printf("the sum of the given fraction is = 1");
     }
-    else if(d3==1)
+    else if(b==1)
     {
-            printf("the sum of the given fraction is = %d",n3);
+            printf("the sum of the given fraction is = %d",a);
     }
     else
     {
-            printf("the sum the given fraction is = %d/%d",n3,d3);
+            printf("the sum the given fraction is = %d/%d",a,b);
     }
     return;
 }
@@ -27,11 +27,11 @@ void add(int n1, int n2, int d1, int d2, int *n3, int *d3)
    *n3=(n1*d2)+(n2*d1);
    return;
 }
-int gcd(int n3, int d3)
+int gcd(int a, int b)
 {   int x;
-    for(int i=1;((i<=n3)&&(i<=d3));i++)
+    for(int i=1;((i<=a)&&(i<=b));i++)
     {
-        if((n3%i==0)&&(d3%i==0))
+        if((a%i==0)&&(b%i==0))
         {
                 x=i;
         }
